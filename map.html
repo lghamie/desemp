@@ -153,8 +153,8 @@
 	    if(props[marker.get("id")].direccion != null) {
 	    	$('#myModalLabel').html(props[marker.get("id")].direccion);
 	    }
-	    if(props[marker.get("id")].precio != null) {
-	    	$('.precio').html(props[marker.get("id")].precio);
+	    if(props[marker.get("id")].preciostring != null) {
+	    	$('.precio').html(props[marker.get("id")].preciostring);
 	    }
 	    if(props[marker.get("id")].mts_total != null) {
 	    	$('.sup-total').html(props[marker.get("id")].mts_total);
@@ -170,6 +170,9 @@
 	    }
 	    if(props[marker.get("id")].descripcion_corta != null) {
 	    	$('.descripcion').html(props[marker.get("id")].descripcion_corta);
+	    }
+	    if(props[marker.get("id")].imagen != null) {
+	    	$('.imagen').attr('src', props[marker.get("id")].imagen);
 	    }
             $('#myModal').modal('show');
         });

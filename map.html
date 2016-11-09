@@ -150,8 +150,27 @@
         });
 
         marker.addListener('click', function() {
-	    $('#myModalLabel').html(props[marker.get("id")].direccion);
-	    $('.precio').html(props[marker.get("id")].preciostring);
+	    if(props[marker.get("id")].direccion != null) {
+	    	$('#myModalLabel').html(props[marker.get("id")].direccion);
+	    }
+	    if(props[marker.get("id")].precio != null) {
+	    	$('.precio').html(props[marker.get("id")].precio);
+	    }
+	    if(props[marker.get("id")].mts_total != null) {
+	    	$('.sup-total').html(props[marker.get("id")].mts_total);
+	    }
+	    if(props[marker.get("id")].mts_cubiertos != null) {
+	    	$('.sup-cubierta').html(props[marker.get("id")].mts_cubiertos);
+	    }
+	    if(props[marker.get("id")].ambientes != null) {
+	    	$('.ambientes').html(props[marker.get("id")].ambientes);
+	    }
+	    if(props[marker.get("id")].antiguedad != null) {
+	    	$('.antiguedad').html(props[marker.get("id")].antiguedad);
+	    }
+	    if(props[marker.get("id")].descripcion_corta != null) {
+	    	$('.descripcion').html(props[marker.get("id")].descripcion_corta);
+	    }
             $('#myModal').modal('show');
         });
         markers.push(marker);

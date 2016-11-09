@@ -71,9 +71,8 @@
 
         $.get("api/props" + location.search, function( retrProps ) {
             console.log("PROPS", retrProps);
-            drawAvailableHouses(map, retrProps);
 	    props = retrProps;
-
+            drawAvailableHouses(map, retrProps);
         });
         map = new google.maps.Map(document.getElementById('map'), {
             center: {

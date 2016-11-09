@@ -64,7 +64,7 @@
     });
     var map;
     var openedInfowindow = false;
-    
+    var props;    
 
     function initMap() {
         geocoder = new google.maps.Geocoder();
@@ -119,14 +119,14 @@
     function drawAvailableHouses(map, houses) {
         var markers = [];
         for (var i = 0; i < houses.length; i++) {
-            drawHouse(houses[i], markers);
+            drawHouse(houses[i], i, markers);
         }        
       /*  var markerCluster = new MarkerClusterer(map, markers, { 
             imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 */
     }
 
-    function drawHouse(house, markers) {
+    function drawHouse(house, id, markers) {
 
         contentString = descHouseHtml;
 
@@ -146,10 +146,11 @@
             position: latlng,
             map: map,
             icon: image,
+	    id: id
         });
 
-        marker.addListener('click', function(house) {
-	    $('#myModalLabel').html(house.direccion);
+        marker.addListener('click', function() {
+	    $('#myModalLabel').html(props[marker.get("id")]);
             $('#myModal').modal('show');
         });
         markers.push(marker);

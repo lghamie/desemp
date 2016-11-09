@@ -150,7 +150,7 @@
         });
 
         marker.addListener('click', function() {
-	    $('#myModalLabel').html(props[marker.get("id")]);
+	    $('#myModalLabel').html(props[marker.get("id")].direccion);
             $('#myModal').modal('show');
         });
         markers.push(marker);
